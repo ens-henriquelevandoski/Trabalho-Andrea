@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Brinquedos</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff8e7;
+            color: #333;
+            font-size: 18px;
+        }
+
+        /* ---------- CABEÇALHO ---------- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #ffd23f;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+        }
+
+        .informacao {
+            font-size: 20px;
+        }
+
+        /* ---------- MENU ---------- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            background-color: #3bceac;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 40px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- CORPO ---------- */
+        main {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 0 40px;
+            padding: 30px;
+            background-color: white;
+            border: 4px solid #ff6b6b;
+            border-radius: 12px;
+        }
+
+        main img {
+            width: 300px;
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        .texto h2 {
+            font-size: 32px;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+
+        .texto p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+
+        /* ---------- DESTAQUES ---------- */
+        .destaques {
+            margin: 15px 40px 0;
+            padding: 30px;
+            background-color: white;
+            border: 4px solid #3bceac;
+            border-radius: 12px;
+        }
+
+        .destaques h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #3bceac;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 25px;
+        }
+
+        .card {
+            flex: 1;
+            text-align: center;
+            padding: 25px 20px;
+            background-color: #fff8e7;
+            border: 3px solid #ffd23f;
+            border-radius: 12px;
+        }
+
+        .card .icone {
+            font-size: 56px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* ---------- CHAMADA PARA AÇÃO ---------- */
+        .chamada {
+            margin: 15px 40px 0;
+            padding: 45px 30px;
+            text-align: center;
+            background-color: #ff6b6b;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .chamada h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .chamada p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .chamada .botao {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #ffd23f;
+            color: #0b3954;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .chamada .botao:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+        /* ---------- RODAPÉ ---------- */
+        footer {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 40px 40px;
+            padding: 25px;
+            background-color: #0b3954;
+            color: white;
+            border-radius: 12px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #ffd23f;
+            text-decoration: none;
+        }
+
+        /* ---------- TABLET ---------- */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
+            .informacao,
+            nav a,
+            .texto p {
+                font-size: 16px;
+            }
+
+            .texto h2 {
+                font-size: 24px;
+            }
+
+            header,
+            nav,
+            main,
+            footer {
+                text-align: center;
+            }
+
+            /* imagem abaixo do texto */
+            main {
+                flex-direction: column-reverse;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            nav,
+            main,
+            footer {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            /* destaques: cards empilhados */
+            .destaques,
+            .chamada {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .destaques {
+                padding: 20px;
+            }
+
+            .destaques h2 {
+                font-size: 24px;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+
+            .card h3 {
+                font-size: 20px;
+            }
+
+            .card p {
+                font-size: 16px;
+            }
+
+            .chamada {
+                padding: 35px 20px;
+            }
+
+            .chamada h2 {
+                font-size: 26px;
+            }
+
+            .chamada p {
+                font-size: 16px;
+            }
+
+            .chamada .botao {
+                font-size: 18px;
+                padding: 12px 30px;
+            }
+        }
+
+        /* ---------- CELULAR ---------- */
+        @media screen and (max-width: 425px) {
+            /* logo menor */
+            .logo {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+
+            /* remove Informação 1 e 2 */
+            .informacao {
+                display: none;
+            }
+
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .destaques {
+                padding: 15px;
+            }
+
+            .card .icone {
+                font-size: 44px;
+            }
+
+            .chamada {
+                padding: 30px 15px;
+            }
+
+            .chamada h2 {
+                font-size: 22px;
+            }
+
+            .chamada .botao {
+                display: block;
+                width: 100%;
+                font-size: 16px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🧸 Logo</div>
+        <span class="informacao">📍 Informação 1</span>
+        <span class="informacao">📞 Informação 2</span>
+    </header>
+
+    <nav>
+        <a href="#">🏠 Início</a>
+        <a href="#">🎲 Brinquedos</a>
+        <a href="#">ℹ️ Sobre</a>
+        <a href="#">✉️ Contato</a>
+    </nav>
+
+    <main>
+        <img src="img.jpg.jpg" alt="Brinquedo Patrulha">
+        <div class="texto">
+            <h2>Bem-vindo à Loja de Brinquedos!</h2>
+            <p>
+                Aqui você encontra os melhores brinquedos para a diversão da
+                criançada. Bonecos, jogos e muito mais, tudo com qualidade e
+                preço justo para fazer a alegria dos pequenos.
+            </p>
+        </div>
+    </main>
+
+    <section class="destaques">
+        <h2>🌟 Nossos Destaques</h2>
+        <div class="cards">
+            <article class="card">
+                <div class="icone">🚓</div>
+                <h3>Bonecos e Personagens</h3>
+                <p>Os personagens favoritos da criançada em versões resistentes e cheias de detalhes.</p>
+            </article>
+            <article class="card">
+                <div class="icone">🧩</div>
+                <h3>Jogos e Quebra-cabeças</h3>
+                <p>Diversão que estimula o raciocínio e une toda a família em momentos especiais.</p>
+            </article>
+            <article class="card">
+                <div class="icone">🎁</div>
+                <h3>Presentes Especiais</h3>
+                <p>Embalagem para presente e opções para todas as idades, prontas para surpreender.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="chamada">
+        <h2>Pronto para alegrar o dia da criançada?</h2>
+        <p>
+            Conheça nossa coleção completa de brinquedos e encontre o presente
+            perfeito com ótimos preços e muita qualidade.
+        </p>
+        <a href="#" class="botao">🎲 Ver brinquedos</a>
+    </section>
+
+    <footer>
+        <div>
+            <h3>🔗 Links úteis</h3>
+            <p><a href="#">Início</a></p>
+            <p><a href="#">Brinquedos</a></p>
+        </div>
+        <div>
+            <h3>💬 Fale conosco</h3>
+            <p>contato@lojadebrinquedos.com</p>
+            <p>(42) 99999-9999</p>
+        </div>
+        <div>
+            <h3>🌐 Redes sociais</h3>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">Facebook</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
