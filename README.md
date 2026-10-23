@@ -1,2 +1,2 @@
 # Trabalho-Andrea
-Exercicios do trabalhp
+Exercicios do trabalho
